@@ -22,6 +22,9 @@ let max=artistData[0].count;
       margin-right: 10px;
       margin-bottom: 5px;
     }
+    .table-container{
+    /* max-width: 80%; */
+  } 
   </style>
   
   <div>
@@ -29,9 +32,9 @@ let max=artistData[0].count;
   <!-- <a href="/artists/week" class="btn variant-filled">week</a>
   <a href="/artists/month" class="btn variant-filled">month</a>
   <a href="/artists/all" class="btn variant-filled">all</a> -->
-
+  <h3 class="my-5">Πιο διάσημοι καλλιτέχνες {convertTimeOption(time_option)}</h3>
   {#if $choice=="γράφημα"} <!-- Add this conditional statement -->
-    <h3 class="my-5">Πιο διάσημοι καλλιτέχνες {convertTimeOption(time_option)}</h3>
+    
     <ol>
     {#each artistData as a, i}
   
@@ -45,9 +48,9 @@ let max=artistData[0].count;
   </ol>
   
   {:else}
-  <div class="table-container overflow-scroll">
+  <div class="table-container max-w-sm">
     <!-- Native Table Element -->
-    <table class="table table-cell-fit table-hover">
+    <table class="table">
       <thead>
         <tr>
           <th>Θέση</th>

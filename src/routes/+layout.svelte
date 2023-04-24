@@ -44,16 +44,16 @@ import {choice} from '../convertTime';
 		<LightSwitch />
 	</header>
 	<!-- add slot -->
-	<div class="container grid place-items-center text-center content-center items-center overflow-auto scrollbar-hide">
+	<div class="w-full flex justify-center text-center md:flex-row">
 		<div class="">
-			<h2 class="mb-3">Πληροφορίες Δίεση 101.3</h2>
+			<h2 class="mb-5">Πληροφορίες Δίεση 101.3</h2>
 			<slot/>
 		</div>
 		
 	</div>
 	
 
-	<footer class="fixed bottom-0 right-0 opacity-70 content-center bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+	<footer class="fixed bottom-0 right-0 opacity-70 content-center bg-white rounded-lg shadow m-4 dark:bg-gray-800 hover:opacity-30">
 		<div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
 			<span class="text-sm mr-4 text-gray-500 sm:text-center dark:text-gray-400"
 				>© 2023  All Rights

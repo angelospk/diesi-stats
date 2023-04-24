@@ -5,4 +5,4 @@
   <a href="/songs/month" class="btn variant-filled">month</a>
   <a href="/songs/all" class="btn variant-filled">all</a>
   <!-- <h3> {$choice}</h3> -->
-  <h3>Επέλεξε χρονικό διάστημα.</h3>
+  <h3 class="my-5">Επέλεξε χρονικό διάστημα.</h3>

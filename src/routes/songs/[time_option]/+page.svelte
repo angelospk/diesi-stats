@@ -30,10 +30,10 @@
 
 <!-- Add buttons -->
 <a href="/songs" class="btn variant-filled">Επέλεξε άλλο χρονικό διάστημα</a>
-
+<h3 class="my-5">Πιο διάσημα τραγούδια {convertTimeOption(time_option)}</h3>
   {#if $choice=="γράφημα"}
-    <h3 class="my-5">Πιο διάσημα τραγούδια {convertTimeOption(time_option)}</h3>
-    <ol>
+    
+    <ol class="m-2">
       {#each songs as s,i }
         <li>
           <a class="flex" href={searchYouTube(`${s.artist} - ${s.title}`)} target="_blank">
@@ -48,28 +48,30 @@
     </ol>
   <!-- {:else} -->
   {:else}
-  <div class="table-container">
+  <div class="table-container max-w-md overflow-scroll">
     <!-- Native Table Element -->
-    <table class="table table-cell-fit table-hover">
+    <table class="table table-auto table-hover">
       <thead>
         <tr>
-          <th>Θέση</th>
-          <th>Τίτλος</th>
-          <th>Καλλιτέχνης</th>
-          <th>Μετρητής</th>
-          <th>Link</th>
+          <th >Θέση</th>
+          <th >Τίτλος</th>
+          <th >Καλλιτέχνης</th>
+          <th >Μετρητής</th>
         </tr>
       </thead>
       <tbody>
         {#each songs as row, i}
-          <tr>
+        <tr
+        on:click={() => window.open(searchYouTube(`${row.artist} - ${row.title}`), '_blank')}
+        title="Κλικ για να το ακούσεις!"
+      >
             <td>{i+1}</td>
             <td>{row.title}</td>
             <td>{row.artist}</td>
             <td>{row.count}</td>
-            <td><a class="content-center" href={searchYouTube(`${row.artist} - ${row.title}`)} target="_blank">
+            <!-- <td><a class="content-center" href={searchYouTube(`${row.artist} - ${row.title}`)} target="_blank">
               <img src="/yicon.png" alt="youtube" width="32" height="32">
-            </a></td>
+            </a></td> -->
           </tr>
         {/each}
       </tbody>
