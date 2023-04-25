@@ -10,8 +10,6 @@
 
 	//load songs and time_option from server.ts
   export let data: PageData;
-  // export let artistData: ArtistData;
-  // export let time_option: string | "day";
   let {songs, time_option} = data.props;
   // export let songs: Song[];
   // export let time_option: string | "day";
@@ -33,7 +31,7 @@
 <h3 class="my-5">Πιο διάσημα τραγούδια {convertTimeOption(time_option)}</h3>
   {#if $choice=="γράφημα"}
     
-    <ol class="m-2">
+    <ol class="m-2 max-h-[600px] overflow-scroll">
       {#each songs as s,i }
         <li>
           <a class="flex" href={searchYouTube(`${s.artist} - ${s.title}`)} target="_blank">
@@ -48,15 +46,15 @@
     </ol>
   <!-- {:else} -->
   {:else}
-  <div class="table-container max-w-md overflow-scroll">
+  <div class="table-container max-h-[600px] overflow-scroll">
     <!-- Native Table Element -->
-    <table class="table table-auto table-hover">
+    <table class="table text-justify table-fixed md:table-auto table-hover">
       <thead>
         <tr>
-          <th >Θέση</th>
+          <th class="w-10" >Θέση</th>
           <th >Τίτλος</th>
           <th >Καλλιτέχνης</th>
-          <th >Μετρητής</th>
+          <th class="text-right md:text-left">Μετρητής</th>
         </tr>
       </thead>
       <tbody>
@@ -68,7 +66,7 @@
             <td>{i+1}</td>
             <td>{row.title}</td>
             <td>{row.artist}</td>
-            <td>{row.count}</td>
+            <td class="text-right md:text-left">{row.count}</td>
             <!-- <td><a class="content-center" href={searchYouTube(`${row.artist} - ${row.title}`)} target="_blank">
               <img src="/yicon.png" alt="youtube" width="32" height="32">
             </a></td> -->

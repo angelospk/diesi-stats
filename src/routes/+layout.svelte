@@ -6,7 +6,6 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 	import { Router, Route, Link } from 'svelte-navigator';
-	import Home from './+page.svelte';
 	import TopArtists from './artists/+page.svelte';
 	import TopSongs from './songs/+page.svelte';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
@@ -41,7 +40,7 @@ import {choice} from '../convertTime';
 				<span>{c}</span>
 			</span>
 		{/each}</div>
-		<LightSwitch />
+		<LightSwitch class="mr-6" />
 	</header>
 	<!-- add slot -->
 	<div class="w-full flex justify-center text-center md:flex-row">

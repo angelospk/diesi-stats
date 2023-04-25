@@ -35,7 +35,7 @@ let max=artistData[0].count;
   <h3 class="my-5">Πιο διάσημοι καλλιτέχνες {convertTimeOption(time_option)}</h3>
   {#if $choice=="γράφημα"} <!-- Add this conditional statement -->
     
-    <ol>
+    <ol class="m-2 max-h-[600px] overflow-scroll">
     {#each artistData as a, i}
   
         <li class="my-0">{i+1+". "}{a.artist} ({a.count +" φορές"})
@@ -48,12 +48,12 @@ let max=artistData[0].count;
   </ol>
   
   {:else}
-  <div class="table-container max-w-sm">
+  <div class="table-container max-h-[600px] overflow-scroll">
     <!-- Native Table Element -->
-    <table class="table">
+    <table class="table text-justify table-fixed md:table-auto">
       <thead>
         <tr>
-          <th>Θέση</th>
+          <th class="w-10">Θέση</th>
           <th>Καλλιτέχνης</th>
           <th>Μετρητής</th>
           <th>Γράφημα Μπάρας</th>
