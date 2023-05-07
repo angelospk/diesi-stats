@@ -13,8 +13,8 @@
     }
   </style>
    <div data-sveltekit-preload-data="off" class="content-center">
-  <button on:click={() => showImage('/image1.jpg')}>Show Image 1</button>
-  <button on:click={() => showImage('/image2.jpg')}>Show Image 2</button>
+  <button on:click={() => showImage('/image1.webp')}>Show Image 1</button>
+  <button on:click={() => showImage('/image2.webp')}>Show Image 2</button>
   <button on:click={() => showImage('/image3.jpg')}>Show Image 3</button>
 
   {#if previewImage}
