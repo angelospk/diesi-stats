@@ -20,5 +20,4 @@
   {#if previewImage}
     <img src="{previewImage}" alt="Preview" />
   {/if}
-  <p>ΕΙΣΑΙ ΧΑΖΟΣ ΚΑΙ ΑΡΓΟΣΧΟΛΟΣ.</p>
 </div>
