@@ -43,22 +43,20 @@ function changeRecents(){
 </script>
 
 <style>
-  .recent-songs-container {
-    max-height: 300px;
-  }
-</style>
 
+</style>
+<h4 class="mt-8">Παίζει τώρα:</h4>
 <div class="font-bold scale-125 md:scale-100">
   <Song artist={playingNow.artist || ""} song={playingNow.song || ""}  />
 </div>
 <h5 class="mt-8">Έπαιξαν πρόσφατα:</h5>
-<div class="recent-songs-container overflow-y-auto">
+<div class="max-h-80 w-md md:w-auto overflow-y-auto">
 {#if $choice=="γράφημα"}
 	{#each recentSongs as {artist, song}}
     <Song {artist} {song}  />
   {/each}
 {:else}
-<div class="table-container max-w-md">
+<div class="table-container">
     <!-- Native Table Element -->
     <table class="table">
 
