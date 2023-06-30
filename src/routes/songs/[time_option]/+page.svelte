@@ -1,13 +1,14 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
   import { convertTimeOption, choice } from "../../../convertTime";
+  import { page } from "$app/stores";
 	// ...
 	interface Song {
 		artist: string;
 		title: string;
 		count: number;
 	}
-
+console.log($page);
 	//load songs and time_option from server.ts
   export let data: PageData;
   let {songs, time_option} = data.props;
@@ -46,27 +47,27 @@
     </ol>
   <!-- {:else} -->
   {:else}
-  <div class="table-container max-h-[600px] overflow-scroll">
+  <div class="table-container overflow-scroll">
     <!-- Native Table Element -->
     <table class="table text-justify table-fixed md:table-auto table-hover">
       <thead>
         <tr>
-          <th class="w-10" >Θέση</th>
-          <th >Τίτλος</th>
-          <th >Καλλιτέχνης</th>
-          <th class="text-right md:text-left">Μετρητής</th>
+          <th class="w-2 truncate" >Θέση</th>
+          <th class="w-3/5 sm:w-auto">Τίτλος</th>
+          <th class="w-2/5 sm:w-auto text-right md:text-left">Καλλιτέχνης</th>
+          <th class="w-4 md:w-fit truncate text-right md:justify-text">Μετρητής</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-xs md:text-lg">
         {#each songs as row, i}
         <tr
         on:click={() => window.open(searchYouTube(`${row.artist} - ${row.title}`), '_blank')}
         title="Κλικ για να το ακούσεις!"
       >
             <td>{i+1}</td>
-            <td>{row.title}</td>
-            <td>{row.artist}</td>
-            <td class="text-right md:text-left">{row.count}</td>
+            <td class="truncate text-start">{row.title}</td>
+            <td class="truncate text-end">{row.artist}</td>
+            <td class="w-4 md:w-fit text-right md:justify-text">{row.count}</td>
             <!-- <td><a class="content-center" href={searchYouTube(`${row.artist} - ${row.title}`)} target="_blank">
               <img src="/yicon.png" alt="youtube" width="32" height="32">
             </a></td> -->

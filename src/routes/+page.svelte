@@ -10,7 +10,7 @@
     status:string;
 }
 type recentSongs={"artist":string,"song":string}[]
-  	let {recentSongs, playingNow} = data.props;
+  	let {recentSongs, playingNow} = data.cache;
 
 let b:{"artist":string,"song":string}= {artist:"",song:""};
 function changeRecents(){
