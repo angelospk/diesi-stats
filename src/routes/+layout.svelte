@@ -9,6 +9,7 @@
 	import TopArtists from './artists/+page.svelte';
 	import TopSongs from './songs/+page.svelte';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+	//
 import {choice} from '../convertTime';
 	function section(c: string = 'γράφημα'): void {
 		choice.set(c);
