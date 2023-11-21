@@ -28,7 +28,6 @@ let max=artistData[0].count;
   </style>
   
   <div>
-    <a href="/artists" class="btn variant-filled bg-red">Επέλεξε άλλο χρονικό διάστημα</a>
   <!-- <a href="/artists/week" class="btn variant-filled">week</a>
   <a href="/artists/month" class="btn variant-filled">month</a>
   <a href="/artists/all" class="btn variant-filled">all</a> -->

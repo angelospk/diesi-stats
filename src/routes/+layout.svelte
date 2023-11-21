@@ -5,9 +5,7 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { Router, Route, Link } from 'svelte-navigator';
-	import TopArtists from './artists/+page.svelte';
-	import TopSongs from './songs/+page.svelte';
+
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	//
 import {choice} from '../convertTime';
@@ -25,8 +23,6 @@ import {choice} from '../convertTime';
 			<a href="/" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Αρχική</a>
 			<a href="/artists" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Top Καλλιτέχνες</a>
 			<a href="/songs" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Top Τραγούδια</a>
-			<a href="/page1" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Page 1</a>
-			<a href="/page2" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Page 2</a>
 			<!-- <a class="ml-3" href="/artists">Top Καλλιτέχνες</a>
 			<a class="ml-3" href="/songs">Top Τραγούδια</a> -->
 		</nav>

@@ -27,7 +27,6 @@
 </script>
 
 <!-- Add buttons -->
-<a href="/songs" class="btn variant-filled">Επέλεξε άλλο χρονικό διάστημα</a>
 <h3 class="my-5">Πιο διάσημα τραγούδια {convertTimeOption(time_option)}</h3>
   {#if $choice=="γράφημα"}
     
