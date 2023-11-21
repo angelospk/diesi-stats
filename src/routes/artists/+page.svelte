@@ -10,10 +10,10 @@
   </script>
   
   <!-- Add buttons -->
-  <a href="/artists/day" class="btn variant-filled hover:variant-filled-primary" >day</a>
-  <a href="/artists/week" class="btn variant-filled hover:variant-filled-primary" >week</a>
-  <a href="/artists/month" class="btn variant-filled hover:variant-filled-primary" >month</a>
-  <a href="/artists/all" class="btn variant-filled hover:variant-filled-primary" >all</a>
+  <a href="/artists/day" class="btn variant-filled">day</a>
+  <a href="/artists/week" class="btn variant-filled">week</a>
+  <a href="/artists/month" class="btn variant-filled">month</a>
+  <a href="/artists/all" class="btn variant-filled">all</a>
   <h3 class="my-5">Επέλεξε χρονικό διάστημα.</h3>
   <!-- <button on:click={() => selectTimeOption('week')}>Week</button>
   <button on:click={() => selectTimeOption('month')}>Month</button>

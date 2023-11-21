@@ -2,7 +2,7 @@
 <script lang="ts">
     export let song:string;
     export let artist:string;
-    // export let isCurrent = false;
+    export let isCurrent = false;
   
     function searchYouTube(query: string): string {
     return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;

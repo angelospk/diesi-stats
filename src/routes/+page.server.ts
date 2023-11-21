@@ -7,24 +7,11 @@ type playingNow={
 }
 type recentSongs=string[]
 
-let cache = {
-  recentSongs: null,
-  playingNow: null,
-  timestamp: Date.now()
-};
 export async function load() {
-  const tenMinutes = 200000; // 3.3 minutes in milliseconds
-
-  // If cache is older than 10 minutes, fetch new data
-  if (!cache.recentSongs || !cache.playingNow || (Date.now() - cache.timestamp > tenMinutes)) {
-    const recentSongsRes = await fetch('https://diesiback.haroldpoi.repl.co/recent-songs');
-    const recentSongs = await recentSongsRes.json();
-    const playingNowRes = await fetch('https://api.diesi.gr/playing-now');
-    const pn:any = await playingNowRes.json();
-
-    // Save the data to the cache and update the timestamp
-   
- 
+  const recentSongsRes = await fetch('https://diesiback.haroldpoi.repl.co/recent-songs');
+  let recentSongs:any= await recentSongsRes.json();
+  const playingNowRes = await fetch('https://api.diesi.gr/playing-now');
+  const pn:any = await playingNowRes.json();
   let playingNow:playingNow;
   if (pn){
     playingNow=pn.data;
@@ -38,25 +25,12 @@ export async function load() {
   }
   if (recentSongs[0].song=playingNow.song){
     recentSongs.shift();
-
-    
-}
-cache = {
-      recentSongs,
-      playingNow,
-      timestamp: Date.now()
-    };
 }
 
   return {
-     cache
+    props: {
+      recentSongs,
+      playingNow
     }
   };
-
-  // return {
-  //   props: {
-  //     recentSongs: cache.recentSongs,
-  //     playingNow: cache.playingNow
-  //   }
-
-
+}

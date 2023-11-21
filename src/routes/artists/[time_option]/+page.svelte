@@ -48,23 +48,23 @@ let max=artistData[0].count;
   </ol>
   
   {:else}
-  <div class="table-container overflow-scroll">
+  <div class="table-container max-h-[600px] overflow-scroll">
     <!-- Native Table Element -->
     <table class="table text-justify table-fixed md:table-auto">
       <thead>
         <tr>
-          <th class="w-5 sm:w-fit truncate md:text-clip">Θέση</th>
+          <th class="w-10">Θέση</th>
           <th>Καλλιτέχνης</th>
-          <th class="truncate md:text-clip text-right md:text-left">Μετρητής</th>
+          <th>Μετρητής</th>
           <th>Γράφημα Μπάρας</th>
         </tr>
       </thead>
       <tbody>
         {#each artistData as row, i}
           <tr>
-            <td class="w-5">{i+1}</td>
-            <td class="text-clip">{row.artist}</td>
-            <td class="truncate md:text-clip text-right md:text-left">{row.count}</td>
+            <td>{i+1}</td>
+            <td>{row.artist}</td>
+            <td>{row.count}</td>
             <td><div
               class="bar"
               style="width: {Math.round((row.count / max) * 100)}%"

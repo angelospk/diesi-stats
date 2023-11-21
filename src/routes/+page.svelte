@@ -10,7 +10,7 @@
     status:string;
 }
 type recentSongs={"artist":string,"song":string}[]
-  	let {recentSongs, playingNow} = data.cache;
+  	let {recentSongs, playingNow} = data.props;
 
 let b:{"artist":string,"song":string}= {artist:"",song:""};
 function changeRecents(){
@@ -43,20 +43,22 @@ function changeRecents(){
 </script>
 
 <style>
-
+  .recent-songs-container {
+    max-height: 300px;
+  }
 </style>
-<h4 class="mt-8">Παίζει τώρα:</h4>
+
 <div class="font-bold scale-125 md:scale-100">
   <Song artist={playingNow.artist || ""} song={playingNow.song || ""}  />
 </div>
 <h5 class="mt-8">Έπαιξαν πρόσφατα:</h5>
-<div class="max-h-80 w-md md:w-auto overflow-y-auto">
+<div class="recent-songs-container overflow-y-auto">
 {#if $choice=="γράφημα"}
 	{#each recentSongs as {artist, song}}
     <Song {artist} {song}  />
   {/each}
 {:else}
-<div class="table-container">
+<div class="table-container max-w-md">
     <!-- Native Table Element -->
     <table class="table">
 
