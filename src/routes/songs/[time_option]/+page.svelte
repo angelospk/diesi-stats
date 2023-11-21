@@ -1,33 +1,32 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
   import { convertTimeOption, choice } from "../../../convertTime";
+	import { page } from "$app/stores";
 	// ...
 	interface Song {
 		artist: string;
 		title: string;
 		count: number;
 	}
-
+  
 	//load songs and time_option from server.ts
-  export let data: PageData;
+  let data=$page.data;
   let {songs, time_option} = data.props;
-  // export let songs: Song[];
-  // export let time_option: string | "day";
-
   let max = songs[0].count;
-	// const navigate = useNavigate();
+  $: {data=$page.data;
+   songs=data.props.songs
+  time_option=data.props.time_option
+  max = songs[0].count;};
+ 
+
 
   
-	// function selectTimeOption(time_option: string) {
-	// 	navigate(`/songs/${time_option}`);
-	// }
     function searchYouTube(query: string): string {
       return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
     }
 </script>
-
-<!-- Add buttons -->
 <h3 class="my-5">Πιο διάσημα τραγούδια {convertTimeOption(time_option)}</h3>
+
   {#if $choice=="γράφημα"}
     
     <ol class="m-2 max-h-[600px] overflow-scroll">
@@ -43,10 +42,8 @@
         </li>
       {/each}
     </ol>
-  <!-- {:else} -->
   {:else}
   <div class="table-container max-h-[600px] overflow-scroll">
-    <!-- Native Table Element -->
     <table class="table text-justify table-fixed md:table-auto table-hover">
       <thead>
         <tr>
@@ -66,9 +63,7 @@
             <td>{row.title}</td>
             <td>{row.artist}</td>
             <td class="text-right md:text-left">{row.count}</td>
-            <!-- <td><a class="content-center" href={searchYouTube(`${row.artist} - ${row.title}`)} target="_blank">
-              <img src="/yicon.png" alt="youtube" width="32" height="32">
-            </a></td> -->
+
           </tr>
         {/each}
       </tbody>
@@ -76,7 +71,6 @@
   
   </div>
   {/if}
-
   <style>
         .bar {
       /* display: inline-block; */

@@ -1,16 +1,21 @@
 <script lang="ts">
 	import type { PageData } from "./$types";
 import { convertTimeOption, choice } from "../../../convertTime";
+	import { page } from "$app/stores";
 
 //load ArtistData from server.ts
 interface ArtistData {
     [key: string]: number;
   }
-export let data: PageData;
-  // export let artistData: ArtistData;
-  // export let time_option: string | "day";
-let {artistData, time_option} = data.props;
-let max=artistData[0].count;
+
+
+let data=$page.data;
+  let {artistData, time_option} = data.props;
+  let max = artistData[0].count;
+  $: {data=$page.data;
+   artistData=data.props.artistData
+  time_option=data.props.time_option
+  max = artistData[0].count;};
 // console.log(getChoice());
 </script>
 

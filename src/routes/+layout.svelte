@@ -20,9 +20,9 @@ import {choice} from '../convertTime';
 	<header class="content-center bg-white rounded-lg shadow m-3 dark:bg-gray-800">
 		<title>Στατιστικά Σταθμού Δίεση 101.3</title>
 		<nav>
-			<a href="/" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Αρχική</a>
-			<a href="/artists" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Top Καλλιτέχνες</a>
-			<a href="/songs" class="btn btn-sm-filled m-1" data-sveltekit-preload-data="hover">Top Τραγούδια</a>
+			<a href="/" class="btn btn-sm-filled m-1 hover:underline" data-sveltekit-preload-data="hover">Αρχική</a>
+			<a href="/artists" class="btn btn-sm-filled m-1 hover:underline" data-sveltekit-preload-data="hover">Top Καλλιτέχνες</a>
+			<a href="/songs" class="btn btn-sm-filled m-1 hover:underline" data-sveltekit-preload-data="hover">Top Τραγούδια</a>
 			<!-- <a class="ml-3" href="/artists">Top Καλλιτέχνες</a>
 			<a class="ml-3" href="/songs">Top Τραγούδια</a> -->
 		</nav>

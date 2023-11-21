@@ -3,7 +3,7 @@ export async function load({ params }) {
     const url = `https://diesiback.haroldpoi.repl.co/topsongs/${time_option}`; // Replace with your Flask server URL
     const response = await fetch(url);
     const songs = await response.json();
-    // console.log(songs)
+    //  console.log(songs)
     return { props: { songs, time_option } };
   }
   
